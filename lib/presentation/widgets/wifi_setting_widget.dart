@@ -1,11 +1,10 @@
-import 'package:alshahari/presentation/widgets/layout_prograph.dart';
 import 'package:flutter/material.dart';
+import 'package:alshahari/presentation/widgets/layout_prograph.dart';
 
 
 class BillContainer extends StatelessWidget {
   const BillContainer(
-      {Key? key, required this.txt, required this.imgUrl, required this.title})
-      : super(key: key);
+      {super.key, required this.txt, required this.imgUrl, required this.title});
   final String txt;
   final String imgUrl;
   final String title;

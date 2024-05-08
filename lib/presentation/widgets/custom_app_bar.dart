@@ -3,7 +3,7 @@ import 'package:alshahari/presentation/widgets/layout_prograph.dart';
 
 // ignore: non_constant_identifier_names
 AppBar CustomAppBar(String title, IconData myIcon,) {
-  return AppBar(  iconTheme: IconThemeData(color: Colors.white),  // Set the AppBar icons to white
+  return AppBar(  iconTheme: const IconThemeData(color: Colors.white),  // Set the AppBar icons to white
 title: Text(title,style: Styles.headerList.copyWith(fontSize: 16),),centerTitle: true,
     flexibleSpace: Container(
       

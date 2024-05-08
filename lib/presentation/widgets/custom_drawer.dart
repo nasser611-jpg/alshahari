@@ -1,16 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:alshahari/core/layout_colors.dart';
+import 'package:alshahari/presentation/screens/another.dart';
 import 'package:alshahari/presentation/screens/about_app.dart';
 import 'package:alshahari/presentation/screens/notifation.dart';
 import 'package:alshahari/presentation/widgets/add_amount.dart';
 import 'package:alshahari/presentation/screens/wifi_setting.dart';
 import 'package:alshahari/presentation/widgets/subtitle_drawer.dart';
+import 'package:alshahari/presentation/widgets/layout_prograph.dart';
 import 'package:alshahari/presentation/widgets/menu_item_drawer.dart';
 
-class drawer extends StatelessWidget {
-   drawer({
+
+class Drawerr extends StatelessWidget {
+   const Drawerr({
     super.key,
   });
+  void _showLanguageDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('اختر اللغه',style: Styles.textBtn.copyWith(color: Colors.black),),
+          content: SingleChildScrollView(
+            child: ListBody(
+              children: <Widget>[
+                GestureDetector(
+                  child: const Text('English (En)',style: Styles.numbers,),
+                  onTap: () {
+                    Navigator.pop(context, 'En');
+                    // Add your code here for when English is selected
+                  },
+                ),
+                const Padding(padding: EdgeInsets.all(8.0)),
+                GestureDetector(
+                  child: const Text('Arabic (Ar)',style: Styles.numbers),
+                  onTap: () {
+                    Navigator.pop(context, 'Ar');
+                    // Add your code here for when Arabic is selected
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
 
 
   @override
@@ -38,7 +72,7 @@ class drawer extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => WifiSetting(),));
+                      .push(MaterialPageRoute(builder: (context) => const WifiSetting(),));
                 },
               ),
               MenuItemDrower(
@@ -46,7 +80,9 @@ class drawer extends StatelessWidget {
                 icon: Icons.language,
                 onTap: () {
                   Navigator.pop(context);
-              
+                build(context);
+                  _showLanguageDialog(context);
+                
                 },
               ),
               MenuItemDrower(
@@ -55,7 +91,7 @@ class drawer extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                 Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => AboutApp(),));
+                      .push(MaterialPageRoute(builder: (context) => const AboutApp(),));
                 },
               ),
               MenuItemDrower(
@@ -64,7 +100,7 @@ class drawer extends StatelessWidget {
                 onTap: () {
                   Navigator.pop(context);
                   Navigator.of(context)
-                      .push(MaterialPageRoute(builder: (context) => Notifacation(),));
+                      .push(MaterialPageRoute(builder: (context) => const Notifacation(),));
                 },
               ),
           
@@ -75,7 +111,8 @@ class drawer extends StatelessWidget {
                 icon: Icons.add_chart,
                 onTap: () {
                   Navigator.pop(context);
-            
+             Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) => const Another(),));
                 },
               ),
             

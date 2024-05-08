@@ -3,7 +3,7 @@ import 'package:alshahari/presentation/widgets/custom_app_bar.dart';
 import 'package:alshahari/presentation/widgets/layout_prograph.dart';
 
 class Notifacation extends StatefulWidget {
-  const Notifacation({Key? key}) : super(key: key);
+  const Notifacation({super.key});
 
   @override
   State<Notifacation> createState() => _NotifacationState();

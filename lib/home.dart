@@ -5,7 +5,7 @@ import 'package:alshahari/presentation/widgets/custom_app_bar.dart';
 import 'package:alshahari/presentation/widgets/layout_prograph.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -13,7 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final ImagePicker _picker = ImagePicker();
-  bool _isCameraOpen = false;
   void captureImage() async {
     final XFile? image = await _picker.pickImage(source: ImageSource.camera);
     if (image != null) {
@@ -25,10 +24,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar('الرئيسية', Icons.home_outlined),
-      endDrawer: drawer(),
+      endDrawer: const Drawerr(),
       body: Container(
    
-        margin: EdgeInsets.all(8),
+        margin: const EdgeInsets.all(8),
         height: MediaQuery.of(context).size.height * 0.83,
         decoration: BoxDecoration(
           color: Colors.white,
